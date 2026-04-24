@@ -230,52 +230,72 @@ export default function Index() {
               )}
             >
               {/* БЫЛО */}
-              <div className="bg-gray-800 p-8 border-b md:border-b-0 md:border-r border-gray-700">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-red-900/60 flex items-center justify-center">
-                    <Icon name="AlertTriangle" size={20} className="text-red-400" />
+              <div className="bg-gray-800 border-b md:border-b-0 md:border-r border-gray-700">
+                <div className="relative">
+                  <img
+                    src="https://cdn.poehali.dev/projects/98bf38bb-f786-44d0-a517-a7cffbfc6104/bucket/b3fd010e-41cf-4fd3-9386-d3522e11c1a8.jpg"
+                    alt="Автобетоносмеситель до ремонта"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute top-4 left-4 flex items-center gap-2 bg-red-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <Icon name="AlertTriangle" size={16} className="text-red-400" />
+                    <span className="text-red-300 font-bold text-sm">БЫЛО</span>
                   </div>
-                  <h3 className="text-2xl font-bold font-heading text-red-400">БЫЛО</h3>
+                  <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs text-gray-400">
+                    26.01.2026 — прибытие на ремонт
+                  </div>
                 </div>
-                <ul className="space-y-5">
-                  {beforeItems.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-7 h-7 rounded-full bg-red-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Icon name={item.icon as IconName} size={14} className="text-red-400" />
-                      </div>
-                      <p className="text-gray-300">{item.text}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 p-4 bg-red-900/20 rounded-lg border border-red-900/40">
-                  <p className="text-red-300 text-sm italic">
-                    «Миксер стоит — бетон не едет. Каждый день простоя — это деньги из кармана.»
-                  </p>
+                <div className="p-8">
+                  <ul className="space-y-5">
+                    {beforeItems.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-7 h-7 rounded-full bg-red-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Icon name={item.icon as IconName} size={14} className="text-red-400" />
+                        </div>
+                        <p className="text-gray-300">{item.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8 p-4 bg-red-900/20 rounded-lg border border-red-900/40">
+                    <p className="text-red-300 text-sm italic">
+                      «Миксер стоит — бетон не едет. Каждый день простоя — это деньги из кармана.»
+                    </p>
+                  </div>
                 </div>
               </div>
 
               {/* СТАЛО */}
-              <div className="bg-gray-800 p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-green-900/60 flex items-center justify-center">
-                    <Icon name="CheckCircle" size={20} className="text-green-400" />
+              <div className="bg-gray-800">
+                <div className="relative">
+                  <img
+                    src="https://cdn.poehali.dev/projects/98bf38bb-f786-44d0-a517-a7cffbfc6104/bucket/4949e6e1-f9f3-4ca9-80a2-36f03cdb09cd.jpg"
+                    alt="Автобетоносмеситель после ремонта"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute top-4 left-4 flex items-center gap-2 bg-green-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <Icon name="CheckCircle" size={16} className="text-green-400" />
+                    <span className="text-green-300 font-bold text-sm">СТАЛО</span>
                   </div>
-                  <h3 className="text-2xl font-bold font-heading text-green-400">СТАЛО</h3>
+                  <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs text-gray-400">
+                    15.04.2026 — приёмка заказчиком
+                  </div>
                 </div>
-                <ul className="space-y-5">
-                  {afterItems.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-7 h-7 rounded-full bg-green-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Icon name={item.icon as IconName} size={14} className="text-green-400" />
-                      </div>
-                      <p className="text-gray-300">{item.text}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 p-4 bg-green-900/20 rounded-lg border border-green-900/40">
-                  <p className="text-green-300 text-sm italic">
-                    «После восстановления машина работает как новая. Окупилось за один сезон.»
-                  </p>
+                <div className="p-8">
+                  <ul className="space-y-5">
+                    {afterItems.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-7 h-7 rounded-full bg-green-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Icon name={item.icon as IconName} size={14} className="text-green-400" />
+                        </div>
+                        <p className="text-gray-300">{item.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8 p-4 bg-green-900/20 rounded-lg border border-green-900/40">
+                    <p className="text-green-300 text-sm italic">
+                      «После восстановления машина работает как новая. Окупилось за один сезон.»
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
